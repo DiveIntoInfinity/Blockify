@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="login.css">
-</head>
-<body>
-    <p>Welcome to our login page!</p>
-    <hr>
-    <p>Enter your credentials below:</p>
-    <form>
-        <label for="username">Username:</label>
-        <input type="text" id="username" class="username">
-        <br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" class="password">
-        <br><br>
-        <input type="submit" value="Continue" class="Continue">
-    </form>
-    <p>Don't have an account? <a href="#">Sign up</a></p>
-    <p>Forgot password? <a href="#">Reset password</a></p>
-    <a href="#" class="open-button">Open</a>
-    <p class="play">Play</p>
-    <p class="home">Home</p>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width",initial scale="1.0">
+        <title>
+            Login Form
+        </title>
+        <link rel="stylesheet" href="loginstyle.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <div class = "wrapper">
+            <form action= "">
+                <h1>LOGIN</h1>
+                <div class = "input-box">
+                    <input type="text" placeholder = "Email" required>
+                    <i class='bx bxs-envelope' ></i>
+                </div>
+                <div class = "input-box">
+                    <input type="password" placeholder = "Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class = "register-link">
+                    <p>Don"t have an account?s
+                        <a href="signuppage.html">Register</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </body>
 </html>
