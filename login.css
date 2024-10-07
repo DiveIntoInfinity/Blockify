@@ -12,11 +12,12 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(https://i.pinimg.com/originals/d8/eb/27/d8eb272a2711e72b903f6dbfc288950d.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-image: url('b1.avif');
 }
+
 .wrapper{
     width: 420px;
     background: transparent;
