@@ -36,11 +36,12 @@
   }
   
   .logo-img {
-      width: 45px;
-      height:45px;
-      margin-left:20px;
+      width: 55px;
+      height:50px;
+      margin-left:10px;
       align-items: center;
       margin-top:10px;
+      margin-right:10px;
   }
   
   nav ul {
@@ -82,21 +83,11 @@
     text-align: center;
     color: #fff;
     padding: 20px;
-    margin-top: -80px;
-  }
-  
-  #background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 108%;
-    object-fit: cover;
-    z-index: -1;
+    margin-top: -170px;
   }
 
   .main h1 {
-      font-size: 80px;
+      font-size: 100px;
       margin-bottom: 20px;
       text-shadow: 10px 15px 10px black;
       font-family: 'BerkshireSwash-Regular';

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phantom Wallet Login</title>
+    <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+</head>
+<body>
+    <h1>Login with Phantom Wallet</h1>
+    <button id="loginButton">Login with Phantom</button>
+    <button id="logoutButton" style="display:none;">Logout</button>
+
+    <script>
+        const loginButton = document.getElementById('loginButton');
+        const logoutButton = document.getElementById('logoutButton');
+
+        // Function to connect to Phantom wallet
+        async function connectWallet() {
+            try {
+                // Check if Phantom is installed
+                if (window.solana && window.solana.isPhantom) {
+                    // Request wallet connection
+                    const response = await window.solana.connect();
+                    const publicKey = response.publicKey.toString();
+                    console.log("Connected with wallet public key: ", publicKey);
+
+                    // Store publicKey in localStorage
+                    localStorage.setItem('phantomPublicKey', publicKey);
+
+                    // Redirect to the dashboard after login (or handle as needed)
+                    window.location.href = 'index.html';
+                } else {
+                    // Show a message or redirect to Phantom wallet install page
+                    alert("Phantom Wallet is not installed! Please install it.");
+                    window.open('https://phantom.app/', '_blank');
+                }
+            } catch (error) {
+                console.error("Error connecting to Phantom: ", error);
+            }
+        }
+
+        // Get public key from localStorage
+        function getPublicKeyFromLocalStorage() {
+            const publicKey = localStorage.getItem('phantomPublicKey');
+            if (publicKey) {
+                console.log("Public key found in localStorage: ", publicKey);
+                // Hide login button and show logout
+                loginButton.style.display = 'none';
+                logoutButton.style.display = 'block';
+                return publicKey;
+            } else {
+                console.log("No public key found, user is not logged in.");
+                // Show login button and hide logout
+                loginButton.style.display = 'block';
+                logoutButton.style.display = 'none';
+                return null;
+            }
+        }
+
+        // Logout function to clear the public key
+        function logout() {
+            localStorage.removeItem('phantomPublicKey');
+            console.log("User logged out, public key removed.");
+            // Redirect to login page or refresh the page to show login
+            window.location.href = 'login.html';
+        }
+
+        // Event listeners
+        loginButton.addEventListener('click', connectWallet);
+        logoutButton.addEventListener('click', logout);
+
+        // Check for stored key on page load
+        window.onload = function () {
+            getPublicKeyFromLocalStorage();
+        };
+    </script>
+</body>
+</html>
