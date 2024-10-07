@@ -1,55 +1,83 @@
 const quizData = [
     {
-        question: "Which planet is known as the Red Planet?",
-        options: ["A) Earth", "B) Mars", "C) Jupiter", "D) Saturn"],
-        correct: 1
+        question: "Which cryptographic algorithm is used in Bitcoin for generating digital signatures?",
+        options: ["RSA", "ECDSA", "SHA-256", "AES"],
+        correct: 1,
+    },
+
+    {
+        question: "What problem does the Byzantine Fault Tolerance (BFT) model address in blockchain systems?",
+        options: ["Double-spending problem", "Network latency issues", "Consensus in the presence of faulty or malicious nodes", "Scalability challenges"],
+        correct: 2,
+    },
+
+    {
+        question: "What does 'sharding' refer to in the context of blockchain scalability?",
+        options: ["Splitting a blockchain into different layers", "Using sidechains for off-chain transactions", "Partitioning the blockchain into smaller pieces for parallel processing", "Creating a second layer for faster transaction processing"],
+        correct: 2,
+        roadmap: [
+            "Study scalability issues in blockchains.",
+            "Learn how sharding improves scalability."
+        ]
     },
     {
-        question: "What is the name of the galaxy that contains our Solar System?",
-        options: ["A) Andromeda", "B) Whirlpool", "C) Milky Way", "D) Triangulum"],
-        correct: 2
+        question: "Which of the following blockchains uses the Proof of History (PoH) consensus mechanism?",
+        options: ["Solana", "Polkadot", "Tezos", "Cardano"],
+        correct: 0,
+        roadmap: [
+            "Study consensus mechanisms and their types.",
+            "Explore how PoH works in Solana."
+        ]
     },
     {
-        question: "What is the largest planet in our Solar System?",
-        options: ["A) Venus", "B) Neptune", "C) Earth", "D) Jupiter"],
-        correct: 3
+        question: "What is the function of the 'nonce' in blockchain mining?",
+        options: ["To encrypt the transaction data", "To ensure the block header meets the required difficulty level", "To manage peer-to-peer node communication", "To verify the digital signature of transactions"],
+        correct: 1,
+        roadmap: [
+            "Learn how PoW uses the nonce.",
+            "Implement a mining algorithm to understand its functionality."
+        ]
+    },
+
+    {
+        question: "What is a 'hard fork' in blockchain?",
+        options: ["An upgrade that maintains backward compatibility", "A temporary split in the blockchain due to network latency", "A permanent divergence creating two separate blockchains", "A change in consensus rules without splitting the blockchain"],
+        correct: 2,
+        roadmap: [
+            "Learn the difference between hard forks and soft forks.",
+            "Study examples like Bitcoin vs Bitcoin Cash."
+        ]
     },
     {
-        question: "Which planet has the most extensive ring system?",
-        options: ["A) Saturn", "B) Uranus", "C) Neptune", "D) Mars"],
-        correct: 0
+        question: "What role does gas play in the Ethereum blockchain?",
+        options: ["To speed up block creation", "To measure the computational effort required to execute transactions", "To reward miners for creating blocks", "To verify the validity of smart contracts"],
+        correct: 1,
+        roadmap: [
+            "Learn how gas is calculated in Ethereum.",
+            "Explore how gas fees fluctuate based on network congestion."
+        ]
     },
     {
-        question: "Which planet is closest to the Sun?",
-        options: ["A) Mercury", "B) Venus", "C) Earth", "D) Mars"],
-        correct: 0
+        question: "What is 'zk-SNARK' used for in blockchain?",
+        options: ["Increasing transaction speed", "Enabling privacy by proving possession of information without revealing it", "Reducing storage requirements for nodes", "Improving mining efficiency"],
+        correct: 1,
+        roadmap: [
+            "Learn about zero-knowledge proofs in cryptography.",
+            "Study projects like Zcash that use zk-SNARKs."
+        ]
     },
+
     {
-        question: "How long does it take for light from the Sun to reach Earth?",
-        options: ["A) 5 minutes", "B) 8 minutes", "C) 15 minutes", "D) 20 minutes"],
-        correct: 1
-    },
-    {
-        question: "Which celestial object is known as the Evening Star?",
-        options: ["A) Mars", "B) Venus", "C) Jupiter", "D) Mercury"],
-        correct: 1
-    },
-    {
-        question: "What is the hottest planet in the Solar System?",
-        options: ["A) Venus", "B) Mercury", "C) Mars", "D) Earth"],
-        correct: 0
-    },
-    {
-        question: "Which planet has the highest number of moons?",
-        options: ["A) Jupiter", "B) Saturn", "C) Neptune", "D) Uranus"],
-        correct: 1
-    },
-    {
-        question: "What type of galaxy is the Milky Way?",
-        options: ["A) Elliptical", "B) Irregular", "C) Spiral", "D) Lenticular"],
-        correct: 2
+        question: "In which blockchain consensus algorithm does a leader randomly select validators?",
+        options: ["Proof of Stake", "Delegated Proof of Stake", "Proof of Elapsed Time", "Liquid Proof of Stake"],
+        correct: 1,
+        roadmap: [
+            "Learn how validators are elected in DPoS.",
+            "Study blockchains like EOS and TRON."
+        ]
     }
 ];
+
 
 let currentQuestion = 0;
 let score = 0;

@@ -18,9 +18,8 @@ body {
     background-image: url('Pic1.png');
     background-size: cover;
     background-repeat: no-repeat;
-
 }
-  
+
   nav {
     margin-top: 0px;
     width:100%;
@@ -77,20 +76,15 @@ body {
     font-size: 20px;
   }
 
-  /* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styling */
-
-
-/* Container Styling */
 #quiz-container {
-    background-color: #0a1526; /* Dark blue */
-    border: 2px solid #1e90ff; /* Bright blue border */
+    background-color: #0a1526;
+    border: 2px solid #1e90ff;
     border-radius: 12px;
     padding: 30px;
     max-width: 500px;
@@ -99,17 +93,15 @@ body {
     text-align: center;
 }
 
-/* Header for Quiz Title */
 h1 {
     font-size: 28px;
     margin-bottom: 10px;
-    color: #1e90ff; /* Bright blue for title */
+    color: #1e90ff;
     font-weight: bold;
 }
 
-/* Score Box */
 #score {
-    background-color: #0a1526; /* Darker blue */
+    background-color: #0a1526;
     border: 1px solid #1e90ff;
     padding: 10px 15px;
     border-radius: 8px;
@@ -120,20 +112,19 @@ h1 {
     right: 20px;
 }
 
-/* Question Styling */
 #question {
     font-size: 24px;
     margin-bottom: 20px;
     color: #ffffff;
 }
 
-/* Options Styling */
+
 .option {
     display: block;
     margin: 10px 0;
     padding: 15px;
-    background-color: #0a1526; /* Dark blue for options */
-    border: 2px solid #1e90ff; /* Blue border */
+    background-color: #0a1526; 
+    border: 2px solid #1e90ff;
     border-radius: 8px;
     cursor: pointer;
     color: #ffffff;
@@ -142,37 +133,33 @@ h1 {
 }
 
 .option:hover {
-    background-color: #1e90ff; /* Hover effect: blue background */
+    background-color: #1e90ff; 
     border-color: #1e90ff;
 }
 
-/* Correct and Incorrect Styling */
 .correct {
-    background-color: #28a745; /* Green for correct answers */
+    background-color: #28a745;
     border-color: #28a745;
 }
 
 .incorrect {
-    background-color: #ff073a; /* Red for incorrect answers */
+    background-color: #ff073a; 
     border-color: #ff073a;
 }
 
-/* Timer Styling */
 #timer {
     font-size: 18px;
     color: #1e90ff;
     margin-bottom: 20px;
 }
 
-/* Result Styling */
 #result {
     font-size: 20px;
     margin-top: 20px;
 }
 
-/* Next Button Styling */
 .btn {
-    background-color: #1e90ff; /* Blue button */
+    background-color: #1e90ff; 
     color: #ffffff;
     padding: 10px 20px;
     font-size: 18px;
@@ -184,16 +171,15 @@ h1 {
 }
 
 .btn:hover {
-    background-color: #0a58ca; /* Darker blue on hover */
+    background-color: #0a58ca;
 }
 
 #next-btn {
     display: none;
 }
 
-/* Progress Bar Styling */
 #progress {
     font-size: 16px;
     margin-top: 10px;
-    color: #ffffff; /* Light grey text for progress */
+    color: #ffffff;
 }
