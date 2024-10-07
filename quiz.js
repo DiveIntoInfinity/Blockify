@@ -1,79 +1,91 @@
 const quizData = [
     {
-        question: "Which cryptographic algorithm is used in Bitcoin for generating digital signatures?",
-        options: ["RSA", "ECDSA", "SHA-256", "AES"],
+        question: "What is a blockchain?",
+        options: ["A type of cryptocurrency", "A decentralized ledger of transactions", "A digital wallet", "A mining algorithm"],
         correct: 1,
-    },
-
-    {
-        question: "What problem does the Byzantine Fault Tolerance (BFT) model address in blockchain systems?",
-        options: ["Double-spending problem", "Network latency issues", "Consensus in the presence of faulty or malicious nodes", "Scalability challenges"],
-        correct: 2,
-    },
-
-    {
-        question: "What does 'sharding' refer to in the context of blockchain scalability?",
-        options: ["Splitting a blockchain into different layers", "Using sidechains for off-chain transactions", "Partitioning the blockchain into smaller pieces for parallel processing", "Creating a second layer for faster transaction processing"],
-        correct: 2,
         roadmap: [
-            "Study scalability issues in blockchains.",
-            "Learn how sharding improves scalability."
+            "Learn about the structure and purpose of a blockchain.",
+            "Understand how blockchain stores data in a decentralized way."
         ]
     },
+
     {
-        question: "Which of the following blockchains uses the Proof of History (PoH) consensus mechanism?",
-        options: ["Solana", "Polkadot", "Tezos", "Cardano"],
+        question: "Which of the following is a key feature of blockchain technology?",
+        options: ["Centralized authority", "Transparency and immutability", "Data stored in a single location", "Manual verification of transactions"],
+        correct: 1,
+        roadmap: [
+            "Study the core features of blockchain: decentralization, immutability, and transparency.",
+            "Explore how these features improve security and trust."
+        ]
+    },
+
+    {
+        question: "What is a 'block' in blockchain?",
+        options: ["A cryptocurrency wallet", "A set of transactions bundled together", "A smart contract", "A digital signature"],
+        correct: 1,
+        roadmap: [
+            "Understand how blocks store transaction data.",
+            "Learn how blocks link together to form a blockchain."
+        ]
+    },
+
+    {
+        question: "Which of the following blockchains was the first to introduce smart contracts?",
+        options: ["Bitcoin", "Ethereum", "Ripple", "Litecoin"],
+        correct: 1,
+        roadmap: [
+            "Study the concept of smart contracts on Ethereum.",
+            "Explore how smart contracts automate agreements."
+        ]
+    },
+
+    {
+        question: "What is cryptocurrency mining?",
+        options: ["Creating new cryptocurrencies", "Validating and adding new transactions to the blockchain", "Trading cryptocurrencies on an exchange", "Setting up a blockchain network"],
+        correct: 1,
+        roadmap: [
+            "Learn about the role of miners in maintaining blockchain integrity.",
+            "Explore how mining works in Proof of Work (PoW) systems."
+        ]
+    },
+
+    {
+        question: "What is a 'wallet' in cryptocurrency?",
+        options: ["A digital file that stores public and private keys", "A blockchain node", "A type of blockchain consensus", "A cryptocurrency exchange"],
         correct: 0,
         roadmap: [
-            "Study consensus mechanisms and their types.",
-            "Explore how PoH works in Solana."
-        ]
-    },
-    {
-        question: "What is the function of the 'nonce' in blockchain mining?",
-        options: ["To encrypt the transaction data", "To ensure the block header meets the required difficulty level", "To manage peer-to-peer node communication", "To verify the digital signature of transactions"],
-        correct: 1,
-        roadmap: [
-            "Learn how PoW uses the nonce.",
-            "Implement a mining algorithm to understand its functionality."
+            "Learn how cryptocurrency wallets store and manage keys.",
+            "Understand the difference between hot wallets and cold wallets."
         ]
     },
 
     {
-        question: "What is a 'hard fork' in blockchain?",
-        options: ["An upgrade that maintains backward compatibility", "A temporary split in the blockchain due to network latency", "A permanent divergence creating two separate blockchains", "A change in consensus rules without splitting the blockchain"],
-        correct: 2,
-        roadmap: [
-            "Learn the difference between hard forks and soft forks.",
-            "Study examples like Bitcoin vs Bitcoin Cash."
-        ]
-    },
-    {
-        question: "What role does gas play in the Ethereum blockchain?",
-        options: ["To speed up block creation", "To measure the computational effort required to execute transactions", "To reward miners for creating blocks", "To verify the validity of smart contracts"],
+        question: "What does a 'decentralized' system mean in the context of blockchain?",
+        options: ["A system controlled by a central authority", "A system where data is stored on multiple nodes", "A system where only one user holds all data", "A system where data is stored in one server"],
         correct: 1,
         roadmap: [
-            "Learn how gas is calculated in Ethereum.",
-            "Explore how gas fees fluctuate based on network congestion."
-        ]
-    },
-    {
-        question: "What is 'zk-SNARK' used for in blockchain?",
-        options: ["Increasing transaction speed", "Enabling privacy by proving possession of information without revealing it", "Reducing storage requirements for nodes", "Improving mining efficiency"],
-        correct: 1,
-        roadmap: [
-            "Learn about zero-knowledge proofs in cryptography.",
-            "Study projects like Zcash that use zk-SNARKs."
+            "Understand how decentralization improves security and resilience.",
+            "Learn about the benefits of decentralized networks."
         ]
     },
 
     {
-        question: "In which blockchain consensus algorithm does a leader randomly select validators?",
-        options: ["Proof of Stake", "Delegated Proof of Stake", "Proof of Elapsed Time", "Liquid Proof of Stake"],
+        question: "What is the purpose of a public key in blockchain?",
+        options: ["To encrypt transactions", "To serve as a unique address for receiving cryptocurrencies", "To store blockchain data", "To verify transactions manually"],
         correct: 1,
         roadmap: [
-            "Learn how validators are elected in DPoS.",
-            "Study blockchains like EOS and TRON."
+            "Learn about public and private key cryptography.",
+            "Understand how public keys are used in transactions."
+        ]
+    },
+
+    {
+        question: "What is the primary purpose of a consensus mechanism in blockchain?",
+        options: ["To ensure all transactions are valid", "To create new cryptocurrencies", "To reduce transaction fees", "To provide a digital wallet"],
+        correct: 0,
+        roadmap: [
+            "Study how consensus mechanisms maintain blockchain integrity.",
+            "Learn about different types of consensus like PoW, PoS, and DPoS."
         ]
     }
 ];
