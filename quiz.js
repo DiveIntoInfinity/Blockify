@@ -90,7 +90,6 @@ const quizData = [
     }
 ];
 
-
 let currentQuestion = 0;
 let score = 0;
 let timer;
@@ -137,6 +136,12 @@ function checkAnswer(selected) {
         }
         if (idx === selected && selected !== correct) {
             btn.classList.add("incorrect");
+            document.getElementById("result").innerHTML = `
+                <div>Suggested Roadmap to Improve:</div>
+                <ul>
+                    ${quizData[currentQuestion].roadmap.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            `;
         }
         btn.onclick = null;
     });
@@ -148,7 +153,6 @@ function checkAnswer(selected) {
 }
 
 function showNextQuestion() {
-    clearInterval(timer);
     document.getElementById("next-btn").style.display = "none";
     currentQuestion++;
     if (currentQuestion < quizData.length) {
@@ -163,8 +167,13 @@ function nextQuestion() {
 }
 
 function showFinalScore() {
+    const tokens = score / 10;
+    const solana = tokens * 0.000001;
+
     document.getElementById("quiz-container").innerHTML = `
-        <h2>Your Final Score: ${score}/100</h2>
+        <h2>Your Final Score: ${score} / 100</h2>
+        <p>You've earned ${tokens} tokens!</p>
+        <p>Token value in Solana: ${solana.toFixed(6)} SOL</p>
         <button class="btn" onclick="playAgain()">Play Again</button>
         <button class="btn" onclick="goHome()">Home</button>`;
 }
