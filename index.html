@@ -2,156 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blockify</title>
-    <link rel="icon" type="image/jpg" href="logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Blockify Login</title>
     <link rel="stylesheet" href="index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@latest/lib/index.iife.min.js"></script>
 </head>
 <body>
-    <nav>
-        <div class="logo">
-            <div class="logo-wrapper">
-            <img src="logo.png" alt="Logo" class="logo-img"></div>
-            <span>Blockify</span>
+    <div class="wrapper">
+        <h1>LOGIN</h1>
+        <button type="button" class="btn" id="loginButton">Login with Phantom Wallet</button>
+        <div class="register-link">
+            <p>Don't have an account? <a href="#.html">Register</a></p>
         </div>
-        <ul class="nav-links">  
-            <li><a href="index.html">Home</a></li>
-            <li><a href="quiz.html">Quizzes</a></li>
-            <li><a href="#">Leaderboard</a></li>
-            <li><a href="index.html">Blog</a></li>
-            <li><a href="#">About Us</a></li>
-        </ul>
-        <a href="#" class="login-btn" id="login-btn">Connect-Wallet</a>
-    </nav>
+    </div>
 
-<section class="main">
-        <div class="main-content">
-            <h1>Blockify</h1>
-            <p>Quiz Your Way, Block by Block!!</p>
-            <a href="quiz.html" class="start-btn" id="start-quiz">Start Quiz</a>
-        </div>
-</section>
+    <script>
+    const loginButton = document.getElementById('loginButton');
 
-    <section class="stats-section">
-        <div class="stats">
-            <div class="stat-item">
-                <h2>1000+</h2>
-                <p>Quizzes Taken</p>
-            </div>
-            <div class="stat-item">
-                <h2>500+</h2>
-                <p>Questions</p>
-            </div>
-            <div class="stat-item">
-                <h2>99%</h2>
-                <p>Satisfaction Rate</p>
-            </div>
-        </div>
-    </section>
+if (window.solana && window.solana.isPhantom) {
+    loginButton.addEventListener('click', async () => {
+        try {
+    
+            const response = await window.solana.connect();
+            const publicKey = response.publicKey.toString();
+            console.log("Connected with wallet public key: ", publicKey);
 
-    <section class="queries-section">
-        <div class="faq">
-            <h2>Blockify Queries</h2>
-            <details>
-                <summary>What is Blockify about?</summary>
-                <p>The Blockify is a AI driven quiz web-application that test your knowledge about Blockchain,Front-End Engineering.</p>
-            </details>
-            <details>
-                <summary>How do I start the quiz?</summary>
-                <p>To start the quiz, click the 'Start Quiz' button on the homepage and follow the on-screen instructions.</p>
-            </details>
-            <details>
-                <summary>Can I retake the quiz?</summary>
-                <p>Yes, you can retake the quiz as many times as you like to improve your score.</p>
-            </details>
-            <details>
-                <summary>Is it suitable for all ages?</summary>
-                <p>Absolutely! Our quiz is designed to be enjoyed by space enthusiasts of all ages.</p>
-            </details>
-            <details>
-                <summary>What if I get stuck?</summary>
-                <p>If you get stuck, don't worry! You can skip a question or refer to our helpful hints section.</p>
-            </details>
-        </div>
-    </section>
+            localStorage.setItem('phantomPublicKey', publicKey);
 
-    <section class="meteor-section">
-        <div class="meteor-container">
-            <video width="100%" height="100%" autoplay loop muted>
-                <source src="video5.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-          <div class="meteor-content">
-            <h2>Dive Into Infinity ∞</h2>
-            <button class="get-started-btn">Get Started</button>
-        </div>
-      </section>
+            window.location.href = 'index.html';
+        } catch (error) {
+            console.error("Error connecting to Phantom: ", error);
+        }
+    });
+} else {
+    alert("Phantom Wallet is not installed! Please install it.");
+    window.open('https://phantom.app/', '_blank');
+}
 
-<section>
-      <div class="subscribe-section">
-      <h2>Subscribe our Newsletter!!</h2>
-      <p>Subscribe to us for latest updates, research papers, special offers and wild content..</p>
-      <div class="email-box">
-          <input type="email" placeholder="Email">
-          <button>Subscribe</button>
-      </div>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-container">
-      <div class="footer-section">
-          <h3><a href="#" target="_blank">Blockify</a></h3>
-          <p>Dive deep to learn more about Blockify and explore new updates in the Web Application!</p>
-          <div class="social-icons">
-            <a href="https://www.facebook.com/" target="_blank">
-              <i class="fab fa-facebook"></i>
-            </a>
-            <a href="https://www.instagram.com/" target="_blank">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/" target="_blank">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://wa.me/" target="_blank">
-              <i class="fab fa-whatsapp"></i>
-            </a>
-          </div>
-      </div>
-      <div class="footer-section">
-          <h3><a href="#" target="_blank">About</a></h3>
-          <ul>
-              <li>Idea</li>
-              <li>Team</li>
-              <li>Know our Tech</li>
-              <li>Privacy Policy</li>
-          </ul>
-      </div>
-      <div class="footer-section">
-          <h3><a href="#" target="_blank">Services</a></h3>
-          <ul>
-              <li>Begin Quiz</li>
-              <li>Updates</li>
-              <li>Tracks</li>
-              <li>Blogs</li>
-              <li>Certificates</li>
-          </ul>
-      </div>
-      <div class="footer-section">
-          <h3><a href="#" target="_blank">Other</a></h3>
-          <ul>
-              <li>Contact Us</li>
-              <li>Help</li>
-              <li>Privacy</li>
-          </ul>
-      </div>
-  </div>
-  <p class="copyright">&copy; 2024 Blockify. All rights reserved.</p>
-</footer>
-
-<script src="index.js"></script>
-<script src="questions.js"></script>
-
+    </script>
 </body>
 </html>
