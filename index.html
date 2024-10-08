@@ -38,16 +38,15 @@
                     return;
                 }
 
-                // Connect to the Phantom wallet
                 const response = await window.solana.connect();
                 const walletPublicKey = response.publicKey.toString();
                 console.log('Connected to wallet:', walletPublicKey);
 
-                // Message to sign
+
                 const message = 'Login with Phantom Wallet';
                 const encodedMessage = new TextEncoder().encode(message);
 
-                // Sign the message
+
                 const signedMessage = await window.solana.request({
                     method: "signMessage",
                     params: {
@@ -58,14 +57,14 @@
                 console.log('Message signed with signature:', signedMessage.signature);
                 alert('Login successful!');
 
-                // Redirect to another page after successful login
+               
                 location.href = 'home.html';
             } catch (error) {
                 console.error('Error during login:', error);
             }
         };
 
-        // Attach the Phantom login functionality to the button
+
         document.getElementById('phantom-login').addEventListener('click', loginWithPhantom);
     </script>
 
