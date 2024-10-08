@@ -185,7 +185,7 @@ function playAgain() {
 }
 
 function goHome() {
-    window.location.href = "index.html";
+    window.location.href = "home.html";
 }
 
 window.onload = loadQuestion;
