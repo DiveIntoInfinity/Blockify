@@ -1,46 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blockify Login</title>
-    <link rel="stylesheet" href="index.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@latest/lib/index.iife.min.js"></script>
-</head>
-<body>
-    <div class="wrapper">
-        <h1>LOGIN</h1>
-        <button type="button" class="btn" id="loginButton">Login with Phantom Wallet</button>
-        <div class="register-link">
-            <p>Don't have an account? <a href="#.html">Register</a></p>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Blocify - Login with Phantom
+        </title>
+        <link rel="stylesheet" href="index.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <form action="">
+                <h1>BLOCKIFY</h1>
+                <div class="input-box">
+                    <button type="button" class="btn" id="phantom-login">Login with Phantom</button>
+                </div>
+                <div class="register-link">
+                    <p>Don't have Phantom Wallet? 
+                        <a href="https://phantom.app/" target="_blank">Get Phantom</a>
+                    </p>
+                </div>
+            </form>
         </div>
-    </div>
+    </body>
 
     <script>
-    const loginButton = document.getElementById('loginButton');
+        const { Connection, clusterApiUrl, PublicKey } = solanaWeb3;
+        const connection = new Connection(clusterApiUrl('devnet'));
 
-if (window.solana && window.solana.isPhantom) {
-    loginButton.addEventListener('click', async () => {
-        try {
-    
-            const response = await window.solana.connect();
-            const publicKey = response.publicKey.toString();
-            console.log("Connected with wallet public key: ", publicKey);
+        const loginWithPhantom = async () => {
+            try {
+                if (!window.solana || !window.solana.isPhantom) {
+                    alert('Please install Phantom wallet.');
+                    return;
+                }
 
-            localStorage.setItem('phantomPublicKey', publicKey);
+                // Connect to the Phantom wallet
+                const response = await window.solana.connect();
+                const walletPublicKey = response.publicKey.toString();
+                console.log('Connected to wallet:', walletPublicKey);
 
-            window.location.href = 'index.html';
-        } catch (error) {
-            console.error("Error connecting to Phantom: ", error);
-        }
-    });
-} else {
-    alert("Phantom Wallet is not installed! Please install it.");
-    window.open('https://phantom.app/', '_blank');
-}
+                // Message to sign
+                const message = 'Login with Phantom Wallet';
+                const encodedMessage = new TextEncoder().encode(message);
 
+                // Sign the message
+                const signedMessage = await window.solana.request({
+                    method: "signMessage",
+                    params: {
+                        message: encodedMessage
+                    }
+                });
+
+                console.log('Message signed with signature:', signedMessage.signature);
+                alert('Login successful!');
+
+                // Redirect to another page after successful login
+                location.href = 'home.html';
+            } catch (error) {
+                console.error('Error during login:', error);
+            }
+        };
+
+        // Attach the Phantom login functionality to the button
+        document.getElementById('phantom-login').addEventListener('click', loginWithPhantom);
     </script>
-</body>
+
 </html>
